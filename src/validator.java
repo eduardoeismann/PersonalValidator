@@ -4,14 +4,15 @@ public class validator {
 		Integer v = args[0].hashCode();
 		
 		try {
-			valid(
+			System.out.println(
+				valid(
 					v.toString().charAt(3),
 					v.toString().charAt(7),
 					v.toString().charAt(5)
-					
+				)
 			);
 		} catch(Throwable t) {
-			System.out.println("FALSE");
+			System.out.println("false");
 		}
 	}
 	
@@ -22,16 +23,9 @@ public class validator {
 			check += x == '7' ? 1 : 0; 
 			check += ((int) y - (int) z) == 7 ? 1 : 0;
 		} catch(Throwable t) {
-			System.out.println("FALSE");
 			return false;
 		}
 		
-		if(check == 2) {
-			System.out.println("TRUE");
-			return true;
-		} else {
-			System.out.println("FALSE");
-			return false;
-		}
+		return (check == 2);
 	}
 }
